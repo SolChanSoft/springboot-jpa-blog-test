@@ -4,6 +4,7 @@ import com.cos.security1.config.auth.PrincipalDetails;
 import com.cos.security1.domain.RoleType;
 import com.cos.security1.domain.User;
 import com.cos.security1.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -24,6 +25,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Controller //View를 리턴하겠다
+@Slf4j
 public class IndexController {
 
     @Autowired
@@ -76,6 +78,8 @@ public class IndexController {
 
     @PostMapping("/join")
     public String join(User user) {
+        System.out.println("user = " + user);
+                
         user.setRole("ROLE_USER");
         String rawPassword = user.getPassword();
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
@@ -85,7 +89,7 @@ public class IndexController {
         //이유는 패스워드가 암호화가 안되었기 때문문
        userRepository.save(user);
 
-        return "redirect:/loginForm";  //redirect를 붙이면 loginForm함수를 호출해줌
+        return "redirect:/user";  //redirect를 붙이면 loginForm함수를 호출해줌
     }
 
     @GetMapping("/joinForm")

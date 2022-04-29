@@ -8,6 +8,10 @@ server:
       force: true
 
 spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
   main:
     allow-circular-references: true
   datasource:
@@ -19,13 +23,17 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: create #create update none
+      format_sql: true
+      ddl-auto: update #create update none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #Entity변수명 그대로 입력
       use-new-id-generator-mappings: false  #JPA의 기본전략을 따라하지 않겠다고 설정  ID 자동부여 전략
     show-sql: true
     properties:
-      hibbernate.format_sql: true  #쿼리문이 여러줄로 표현
+      hibernate.format_sql: true  #쿼리문이 여러줄로 표현
+
+  logging.level:
+    org.hibernate.SQL: debug
 
   security:
     oauth2:

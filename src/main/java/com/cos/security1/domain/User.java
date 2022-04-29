@@ -18,9 +18,11 @@ import java.sql.Timestamp;
 public class User {
     @Id  // PK설정
     @GeneratedValue(strategy = GenerationType.IDENTITY) //프로젝트에서 연결된 DB의 넘버링전략을 따라간다.
+    @Column(name = "user_id")
     private Long id;  //예시: "google_10~~"
 
-    @Column(nullable = false, length = 30) //무조건 NULL이 안되면서 최대길이가 20자가 안되게
+    //무조건 NULL이 안되면서 최대길이가 20자가 안되게, unique 중복방지
+    @Column(nullable = false, length = 255, unique = true)
     private String username;
     private String password;  //구글등으로 로그인할 경우 NULL대신에 임의의 암호로 입력
 
