@@ -5,42 +5,43 @@
 
 <body class="text-center">
 
-<main class="form-signin">
-    <form action="/login" method="post">
-        <img class="mb-4" src="/image/cc-logo.svg" alt="" width="200" height="138">
-        <h1 class="h4 mb-4 fw-normal">한양아이소리 인트라넷</h1>
+<h1><a href="/loginForm">로그인하기</a></h1>
 
-        <div class="form-floating" >
-            <input type="text" class="form-control" name="username" id="username" placeholder="Login ID">
-            <label for="username">Login ID</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" name="passowrd" id="password" placeholder="Password">
-            <label for="password">Password</label>
-        </div>
-        <div class="form-floating">
-            <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
-        </div>
-        <div class="form-floating">
+<!--<main class="form-signin">-->
+<!--    <form action="/login" method="post">-->
+<!--        <img class="mb-4" src="/image/cc-logo.svg" alt="" width="200" height="138">-->
+<!--        <h1 class="h4 mb-4 fw-normal">한양아이소리 인트라넷</h1>-->
 
-            </br>
-            </br>
-            <a>>>> 간편로그인 <<<</a>
-            </br>
-            <a href="/oauth2/authorization/naver" role="button">
-                <img src="/image/naver-login.png" alt="네이버로그인" width="201" height="54"></a>
-            </br>
-            </br>
-            <a href="/oauth2/authorization/kakao" role="button">
-                <img src="/image/kakao_login_large_narrow.png" alt="카카오로그인" width="201" height="54"></a>
-            </br>
-            </br>
-            <a href="/oauth2/authorization/google">
-                <img src="/image/google_login.png" alt="구글로그인" width="201" height="54"></a>
-        </div>
-    </form>
-    <div th:replace="fragments/footer :: footer" />
-</main>
+<!--        <div class="form-floating" >-->
+<!--            <input type="text" class="form-control" name="username" id="username" placeholder="Login ID">-->
+<!--            <label for="username">Login ID</label>-->
+<!--        </div>-->
+<!--        <div class="form-floating">-->
+<!--            <input type="password" class="form-control" name="password" id="password" placeholder="Password">-->
+<!--            <label for="password">Password</label>-->
+<!--        </div>-->
+<!--        <div class="form-floating">-->
+<!--            <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>-->
+<!--        </div>-->
+<!--        <div class="form-floating">-->
 
+<!--            </br>-->
+<!--            </br>-->
+<!--            <a>>>> 간편로그인 <<<</a>-->
+<!--            </br>-->
+<!--            <a href="/oauth2/authorization/naver" role="button">-->
+<!--                <img src="/image/naver-login.png" alt="네이버로그인" width="201" height="54"></a>-->
+<!--            </br>-->
+<!--            </br>-->
+<!--            <a href="/oauth2/authorization/kakao" role="button">-->
+<!--                <img src="/image/kakao_login_large_narrow.png" alt="카카오로그인" width="201" height="54"></a>-->
+<!--            </br>-->
+<!--            </br>-->
+<!--            <a href="/oauth2/authorization/google">-->
+<!--                <img src="/image/google_login.png" alt="구글로그인" width="201" height="54"></a>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</main>-->
+<!--<div th:replace="fragments/footer :: footer" />-->
 </body>
 </html>

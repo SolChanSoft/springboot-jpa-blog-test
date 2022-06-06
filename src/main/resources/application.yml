@@ -8,18 +8,26 @@ server:
       force: true
 
 spring:
+#  devtools:  // JSP파일 수정후 바로(실시간) 반영되는 방법
+#    livereload:
+#      enabled: true
+
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
 
   main:
     allow-circular-references: true
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
     username: cos
     password: cos1234
-
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/views;
+#      suffix: .jsp
   jpa:
     open-in-view: true
     hibernate:

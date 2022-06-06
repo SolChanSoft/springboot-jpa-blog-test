@@ -31,12 +31,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").authenticated() //인증만 되면 들어갈 수 있는 주소
                 .antMatchers("/manager/**").hasAnyAuthority("ROLE_ADMIN","ROLE_MANAGER")
                 .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
-                .anyRequest().permitAll()
+                .antMatchers("/","/auth/**","/css/**","/image/**","/dummy/**","/loginForm").permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/loginForm")
                 .loginProcessingUrl("/login") //login주소가 호출이 되면서 시큐리티가 낚아채서 대신 로그인을 진행해줌
-                .defaultSuccessUrl("/user")
+                .defaultSuccessUrl("/board")
                 .and()
                 .oauth2Login()
                 .loginPage("/user") //성공하면 메인페이지로 이동 , 구글 로그인이 완료된 후 처리가 필요함. Tip: 코드 X, (엑세스토큰+사용자프로필정보 O)
